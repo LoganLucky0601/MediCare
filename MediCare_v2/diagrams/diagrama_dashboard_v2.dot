@@ -1,0 +1,19 @@
+digraph Dashboards {
+ graph [rankdir=LR, bgcolor="white",pad="0.25",nodesep="0.6",ranksep="1.0",splines=polyline, fontname="DejaVu Sans",label="MediCare • Casos de uso complementares — dashboards por identidade",labelloc=t,fontsize=19,fontcolor="#123a51"];
+ node [fontname="DejaVu Sans",fontsize=11];edge [color="#5e8091",fontname="DejaVu Sans",fontsize=10,arrowsize=0.7];
+ paciente [label="Paciente",shape=box,style="rounded,filled",fillcolor="#e5f7f3",color="#288b80"];
+ recepcionista [label="Recepcionista",shape=box,style="rounded,filled",fillcolor="#e5f7f3",color="#288b80"];
+ medico [label="Médico",shape=box,style="rounded,filled",fillcolor="#e5f7f3",color="#288b80"];
+ subgraph cluster_system {
+  label="Sistema de Agendamento — Clínica MediCare";style="rounded";color="#9db4c0";fontcolor="#123a51";
+  pc [label="Visualizar painel\ndo paciente",shape=ellipse,style=filled,fillcolor="#f0f8fc",color="#386982"];
+  rc [label="Visualizar painel\nda recepção",shape=ellipse,style=filled,fillcolor="#f0f8fc",color="#386982"];
+  mc [label="Visualizar painel\ndo médico",shape=ellipse,style=filled,fillcolor="#f0f8fc",color="#386982"];
+  filtrar [label="Filtrar informações\npor identidade",shape=ellipse,style=filled,fillcolor="#fff7e9",color="#b99257"];
+  permissao [label="Verificar permissão\nde acesso",shape=ellipse,style=filled,fillcolor="#fff7e9",color="#b99257"];
+  {rank=same;pc;rc;mc}
+ }
+ paciente -> pc [arrowhead=none]; recepcionista -> rc [arrowhead=none];medico -> mc [arrowhead=none];
+ pc -> filtrar [style=dashed,label="«include»"];rc -> filtrar [style=dashed,label="«include»"];mc -> filtrar [style=dashed,label="«include»"];
+ filtrar -> permissao [style=dashed,label="«include»"];
+}

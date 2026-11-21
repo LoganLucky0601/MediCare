@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d273d">
+  <meta name="description" content="Protótipo demonstrativo do sistema de agendamento MediCare, com três ambientes individualizados.">
+  <title>MediCare | Agendamento inteligente</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Navegação principal">
+      <div class="logo"><span class="logo-symbol" aria-hidden="true">✚</span><span><strong>MediCare</strong><small>Gestão de consultas</small></span></div>
+      <div class="workspace-label">ACESSO DEMONSTRATIVO</div>
+      <label class="field-label" for="identity">Usuário em demonstração</label>
+      <select id="identity" aria-describedby="demo-help">
+        <optgroup label="Pacientes">
+          <option value="p1">Ana Souza — Paciente</option>
+          <option value="p2">Bruno Lima — Paciente</option>
+          <option value="p3">Clara Dias — Paciente</option>
+        </optgroup>
+        <optgroup label="Recepção"><option value="r1">Patrícia Alves — Recepcionista</option></optgroup>
+        <optgroup label="Médicos">
+          <option value="d1">Dr. Caio Martins — Clínica Geral</option>
+          <option value="d2">Dra. Marisa Costa — Cardiologia</option>
+          <option value="d3">Dra. Elisa Rocha — Pediatria</option>
+        </optgroup>
+      </select>
+      <p id="demo-help" class="micro muted">Troca de identidade para testes. Não é um login real.</p>
+      <div class="sidebar-divider"></div>
+      <div class="workspace-label">MENU</div>
+      <nav id="nav" class="nav-list" aria-label="Seções do sistema"></nav>
+      <div class="sidebar-bottom"><div class="demo-mark">● MODO DEMONSTRAÇÃO</div><p>Dados fictícios armazenados somente neste navegador.</p></div>
+    </aside>
+    <div class="main-area">
+      <header class="topbar"><div class="topbar-copy"><span class="eyebrow">CLÍNICA MEDICARE · PORTAL</span><h1 id="page-title">Visão geral</h1><p id="page-desc">Acompanhamento das suas atividades</p></div><div class="topbar-actions"><span id="role-pill" class="role-pill">Paciente</span><button id="reset-data" class="btn btn-quiet" type="button" title="Reinicia apenas os dados de demonstração">↺ Reiniciar dados</button></div></header>
+      <main id="page-body" tabindex="-1"></main>
+      <footer class="footer">Protótipo acadêmico · Informações fictícias · Confirmação por e-mail apenas simulada · Não utilizar para atendimentos reais</footer>
+    </div>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
